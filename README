@@ -1,0 +1,6 @@
+League of Legends OB (spectator) mode downloader
+================================================
+
+ * This project is written in perl.
+ * Currently, it only supports Taiwan server.
+ * Will work on other regions if I have time.
