@@ -1,6 +1,7 @@
-League of Legends OB (spectator) mode downloader
-================================================
+League of Legends OB (spectator) mode downloader and utils
+==========================================================
 
- * This project is written in perl.
+ * This project is written in perl, ruby, C.
  * Currently, it only supports Taiwan server.
  * Will work on other regions if I have time.
+ * Includes some work notes for replay files.
