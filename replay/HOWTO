@@ -1,0 +1,9 @@
+1. Open ROFL files in the game client:
+
+- Start "League of Legends.exe" as the command arguments hat specator mode have,
+  but change the last argument to your ROFL file path.
+
+  For example, in TW client:
+  C:\Program Files (x86)\GarenaLoLTW\GameData\Apps\LoLTW\Game>"League of Legends.exe" "" "" "" "C:\a.rofl"
+
+- You may be prompted with replay version mismatch, press Yes to continue.
