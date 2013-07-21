@@ -105,14 +105,14 @@ sub getLastChunkInfo {
     my $ckid = $s->{max_chunk_id};
     my $chunk = $s->{chunks}->{"$ckid"};
     my $obj = {
-	chunkId => $ckid,
+	chunkId => int $ckid,
 	availableSince => 30000,
 	nextAvailableChunk => 30000,
-	keyFrameId => $gm->{lastKeyFrameId},
-	nextChunkId => $s->{max_chunk_id},
-	endStartupChunkId => $gm->{endStartupChunkId},
-	startGameChunkId => $gm->{startGameChunkId},
-	duration => $chunk ? $chunk->{duration} : 30000
+	keyFrameId => int $gm->{lastKeyFrameId},
+	nextChunkId => int $s->{max_chunk_id},
+	endStartupChunkId => int $gm->{endStartupChunkId},
+	startGameChunkId => int $gm->{startGameChunkId},
+	duration => $chunk ? int $chunk->{duration} : 30000
     };
 
     print STDERR "do_startup=>", $s->{do_startup}, "\n";
@@ -120,11 +120,11 @@ sub getLastChunkInfo {
 	$ckid = $s->{do_startup};
 	$chunk = $s->{chunks}->{"$ckid"};
 	my $kf = find_keyframe($s, $ckid);
-	$obj->{chunkId} = $ckid;
+	$obj->{chunkId} = int $ckid;
 	$obj->{keyFrameId} = int $kf->{id};
-	$obj->{nextChunkId} = $kf->{nextChunkId};
+	$obj->{nextChunkId} = int $kf->{nextChunkId};
 	$obj->{nextAvailableChunk} = 10000;
-	$obj->{duration} = $chunk ? $chunk->{duration} : 30000;
+	$obj->{duration} = $chunk ? int $chunk->{duration} : 30000;
 	$s->{do_startup}++;
     }
 
